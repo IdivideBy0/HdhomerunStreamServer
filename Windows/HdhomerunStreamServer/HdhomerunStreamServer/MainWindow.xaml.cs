@@ -42,6 +42,9 @@ namespace HdhrStreamServer
             }
             catch (ViewerNotFoundException)
             {
+                // Added message and exit routine if VLC is not found. 10/13/14 IdivideBy0
+                System.Windows.MessageBox.Show("VLC executable not found! Please install VLC first and try again.", "Hdhomerunstreamserver Exception!");
+                this.Close();
             }
             catch (BadVlcVersionException exception)
             {
