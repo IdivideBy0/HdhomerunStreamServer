@@ -101,6 +101,10 @@ namespace HdhrStreamServer
             
             streamController.setViewer( vlcPathTextBox.Text );
             streamController.Start();
+            
+            // Display the listening and sending port info.
+            txtListeningPort.Text = Convert.ToString(streamController.VideoInputPort);
+            txtSendingPort.Text = Convert.ToString(streamController.VideoOutputPort);
         }
 
         private void Stop_Click(object sender, RoutedEventArgs e)
